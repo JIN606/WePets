@@ -1,0 +1,67 @@
+
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "$id": "urn:table:quests",
+    "type": "object",
+    "title": "Quests",
+    "description": "Stores quest tasks that pets can complete to earn rewards.",
+    "required": ["name", "type", "xp_value"],
+    "properties": {
+      "id": {
+        "type": "integer",
+        "title": "ID",
+        "description": "The unique, auto-incrementing identifier for the quest.",
+        "readOnly": true,
+        "primaryKey": true
+      },
+      "name": {
+        "type": "string",
+        "title": "Quest Name",
+        "description": "The name of the quest/task."
+      },
+      "emoji": {
+        "type": "string",
+        "title": "Emoji",
+        "description": "Emoji representing the quest/task.",
+        "default": ""
+      },
+      "description": {
+        "type": "string",
+        "title": "Description",
+        "description": "Detailed description of the quest.",
+        "default": ""
+      },
+      "type": {
+        "type": "string",
+        "title": "Type",
+        "description": "Type/category of the quest (e.g., daily, weekly, one_time)."
+      },
+      "xp_value": {
+        "type": "integer",
+        "title": "XP Value",
+        "description": "Experience points awarded upon completion.",
+        "default": 0
+      },
+      "is_custom": {
+        "type": "integer",
+        "title": "Is Custom",
+        "description": "Boolean flag (1 for true, 0 for false) indicating if the quest is user-created.",
+        "default": 0
+      },
+      "created_at": {
+        "type": "string",
+        "format": "date-time",
+        "title": "Created At",
+        "description": "Timestamp of quest creation.",
+        "readOnly": true
+      },
+      "updated_at": {
+        "type": "string",
+        "format": "date-time",
+        "title": "Updated At",
+        "description": "Timestamp of last update.",
+        "readOnly": true
+      }
+    }
+  }
+  

@@ -1,0 +1,70 @@
+
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "$id": "urn:table:challenge_leaderboard",
+    "type": "object",
+    "title": "Challenge Leaderboard",
+    "description": "Stores leaderboard rankings, scores, and tier badges for challenges.",
+    "required": ["challenge_id", "user_id", "score", "tier"],
+    "properties": {
+      "id": {
+        "type": "integer",
+        "title": "ID",
+        "description": "Unique, auto-incrementing identifier for the leaderboard entry.",
+        "readOnly": true,
+        "primaryKey": true
+      },
+      "challenge_id": {
+        "type": "integer",
+        "title": "Challenge ID",
+        "description": "Reference to the challenge.",
+        "index": true
+      },
+      "user_id": {
+        "type": "integer",
+        "title": "User ID",
+        "description": "Reference to the user.",
+        "index": true
+      },
+      "pet_name": {
+        "type": "string",
+        "title": "Pet Name",
+        "description": "Name of the user's pet for display on leaderboard."
+      },
+      "score": {
+        "type": "integer",
+        "title": "Score",
+        "description": "XP or points earned in the challenge.",
+        "default": 0
+      },
+      "tier": {
+        "type": "string",
+        "title": "Tier",
+        "description": "Tier badge for the user (Bronze, Silver, Gold).",
+        "enum": ["Bronze", "Silver", "Gold"],
+        "default": "Bronze"
+      },
+      "last_updated": {
+        "type": "string",
+        "format": "date-time",
+        "title": "Last Updated",
+        "description": "Timestamp of last score update."
+      },
+      "created_at": {
+        "type": "string",
+        "format": "date-time",
+        "title": "Created At",
+        "description": "Timestamp of record creation.",
+        "readOnly": true
+      },
+      "updated_at": {
+        "type": "string",
+        "format": "date-time",
+        "title": "Updated At",
+        "description": "Timestamp of last update.",
+        "readOnly": true
+      }
+    }
+  }
+  
+  

@@ -1,0 +1,51 @@
+
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "$id": "urn:table:friendships",
+    "type": "object",
+    "title": "Friendships",
+    "description": "Stores friendship relationships between users with status (pending, accepted, rejected).",
+    "required": ["user_id", "friend_id", "status"],
+    "properties": {
+      "id": {
+        "type": "integer",
+        "title": "ID",
+        "description": "Unique auto-incrementing identifier for the friendship record.",
+        "readOnly": true,
+        "primaryKey": true
+      },
+      "user_id": {
+        "type": "integer",
+        "title": "User ID",
+        "description": "Reference to the user who initiates or owns the friendship.",
+        "index": true
+      },
+      "friend_id": {
+        "type": "integer",
+        "title": "Friend ID",
+        "description": "Reference to the friend user.",
+        "index": true
+      },
+      "status": {
+        "type": "string",
+        "title": "Status",
+        "description": "Friendship status: pending, accepted, or rejected.",
+        "enum": ["pending", "accepted", "rejected"]
+      },
+      "created_at": {
+        "type": "string",
+        "format": "date-time",
+        "title": "Created At",
+        "description": "Timestamp of record creation.",
+        "readOnly": true
+      },
+      "updated_at": {
+        "type": "string",
+        "format": "date-time",
+        "title": "Updated At",
+        "description": "Timestamp of last update.",
+        "readOnly": true
+      }
+    }
+  }
+  

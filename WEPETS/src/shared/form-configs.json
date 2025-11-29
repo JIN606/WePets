@@ -1,0 +1,91 @@
+
+
+
+
+
+
+
+{
+    "add_pet_form": {
+      "dbSchemaName": "pets-schema",
+      "sendNotificationEmail": false,
+      "sendFeedbackEmail": false,
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft-07/schema#",
+        "$id": "add_pet_form_schema",
+        "type": "object",
+        "title": "Add New Pet",
+        "required": ["name", "avatar_url"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Pet Name",
+            "description": "What is your pet's name?",
+            "minLength": 1,
+            "maxLength": 50
+          },
+          "avatar_url": {
+            "type": "string",
+            "title": "Avatar URL",
+            "description": "Paste a link to your pet's photo (e.g., from Unsplash)",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "add_quest_form": {
+      "dbSchemaName": "quests-schema",
+      "sendNotificationEmail": false,
+      "sendFeedbackEmail": false,
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft-07/schema#",
+        "$id": "add_quest_form_schema",
+        "type": "object",
+        "title": "Create New Quest",
+        "required": ["name", "xp_value"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Quest Name",
+            "description": "e.g., Walk 20 mins",
+            "minLength": 3
+          },
+          "emoji": {
+            "type": "string",
+            "title": "Emoji",
+            "description": "Choose an emoji for your quest (e.g., 🐕, 🎾, 💪)",
+            "maxLength": 2
+          },
+          "description": {
+            "type": "string",
+            "title": "Description",
+            "description": "Details about the quest",
+            "multiline": true
+          },
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "description": "Daily, Weekly, or One-time",
+            "enum": ["daily", "weekly", "one_time"],
+            "enumNames": ["Daily", "Weekly", "One-time"],
+            "default": "daily"
+          },
+          "xp_value": {
+            "type": "integer",
+            "title": "XP Reward",
+            "description": "How much XP is this worth?",
+            "minimum": 1,
+            "maximum": 1000,
+            "default": 10
+          }
+        }
+      }
+    }
+  }
+  
+  
+  
+  
+  
+  
+  

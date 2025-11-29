@@ -1,0 +1,57 @@
+
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "$id": "urn:table:quest_logs",
+    "type": "object",
+    "title": "Quest Logs",
+    "description": "Logs of quest completions by pets, tracking status and completion dates.",
+    "required": ["pet_id", "quest_id", "completion_date", "status"],
+    "properties": {
+      "id": {
+        "type": "integer",
+        "title": "ID",
+        "description": "Unique, auto-incrementing identifier for the quest log entry.",
+        "readOnly": true,
+        "primaryKey": true
+      },
+      "pet_id": {
+        "type": "integer",
+        "title": "Pet ID",
+        "description": "Reference to the pet who completed the quest.",
+        "index": true
+      },
+      "quest_id": {
+        "type": "integer",
+        "title": "Quest ID",
+        "description": "Reference to the quest completed.",
+        "index": true
+      },
+      "completion_date": {
+        "type": "string",
+        "format": "date-time",
+        "title": "Completion Date",
+        "description": "Date and time when the quest was completed."
+      },
+      "status": {
+        "type": "string",
+        "title": "Status",
+        "description": "Completion status (e.g., done, pending).",
+        "default": "done"
+      },
+      "created_at": {
+        "type": "string",
+        "format": "date-time",
+        "title": "Created At",
+        "description": "Timestamp of log creation.",
+        "readOnly": true
+      },
+      "updated_at": {
+        "type": "string",
+        "format": "date-time",
+        "title": "Updated At",
+        "description": "Timestamp of last update.",
+        "readOnly": true
+      }
+    }
+  }
+  

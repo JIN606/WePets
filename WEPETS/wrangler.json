@@ -1,0 +1,29 @@
+{
+    "$schema": "node_modules/wrangler/config-schema.json",
+    "name": "cloudflare_worker_name",
+    "main": "./src/worker/index.ts",
+    "compatibility_date": "2025-04-01",
+    "compatibility_flags": ["nodejs_compat"],
+    "observability": {
+      "enabled": true
+    },
+    "upload_source_maps": true,
+    "assets": {
+      "directory": "./dist/client",
+      "binding": "ASSETS",
+      "not_found_handling": "single-page-application"
+    },
+    "d1_databases": [
+      {
+        "binding": "DB",
+        "database_name": "db",
+        "database_id": "cloudflare_d1_id"
+      }
+    ],
+    "vars": {
+      "PROJECT_ID": "project_id",
+      "USER_EMAIL": "user_email",
+      "API_KEY": "api_key"
+    }
+  }
+  

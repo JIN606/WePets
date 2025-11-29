@@ -1,0 +1,77 @@
+
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "$id": "urn:table:challenge_participations",
+    "type": "object",
+    "title": "Challenge Participations",
+    "description": "Stores user participation data and progress for challenges.",
+    "required": ["challenge_id", "user_id", "progress", "status"],
+    "properties": {
+      "id": {
+        "type": "integer",
+        "title": "ID",
+        "description": "Unique, auto-incrementing identifier for the participation record.",
+        "readOnly": true,
+        "primaryKey": true
+      },
+      "challenge_id": {
+        "type": "integer",
+        "title": "Challenge ID",
+        "description": "Reference to the challenge.",
+        "index": true
+      },
+      "user_id": {
+        "type": "integer",
+        "title": "User ID",
+        "description": "Reference to the participating user.",
+        "index": true
+      },
+      "progress": {
+        "type": "integer",
+        "title": "Progress",
+        "description": "Progress value (e.g., steps count, tricks done) towards challenge completion.",
+        "default": 0
+      },
+      "status": {
+        "type": "string",
+        "title": "Status",
+        "description": "Participation status (e.g., joined, completed, forfeited).",
+        "default": "joined"
+      },
+      "reward_claimed": {
+        "type": "integer",
+        "title": "Reward Claimed",
+        "description": "Boolean flag (1 for true, 0 for false) indicating if reward was claimed.",
+        "default": 0
+      },
+      "joined_at": {
+        "type": "string",
+        "format": "date-time",
+        "title": "Joined At",
+        "description": "Timestamp when the user joined the challenge."
+      },
+      "completed_at": {
+        "type": "string",
+        "format": "date-time",
+        "title": "Completed At",
+        "description": "Timestamp when the user completed the challenge.",
+        "nullable": true
+      },
+      "created_at": {
+        "type": "string",
+        "format": "date-time",
+        "title": "Created At",
+        "description": "Timestamp of record creation.",
+        "readOnly": true
+      },
+      "updated_at": {
+        "type": "string",
+        "format": "date-time",
+        "title": "Updated At",
+        "description": "Timestamp of last update.",
+        "readOnly": true
+      }
+    }
+  }
+  
+  

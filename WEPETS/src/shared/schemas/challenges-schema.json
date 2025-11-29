@@ -1,0 +1,78 @@
+
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "$id": "urn:table:challenges",
+    "type": "object",
+    "title": "Challenges",
+    "description": "Stores time-bound challenges with completion goals, categories, rewards, and scheduling.",
+    "required": ["name", "duration", "completion_goal", "bonus_reward", "category", "start_date", "end_date", "is_active"],
+    "properties": {
+      "id": {
+        "type": "integer",
+        "title": "ID",
+        "description": "Unique, auto-incrementing identifier for the challenge.",
+        "readOnly": true,
+        "primaryKey": true
+      },
+      "name": {
+        "type": "string",
+        "title": "Challenge Name",
+        "description": "Name of the challenge."
+      },
+      "duration": {
+        "type": "integer",
+        "title": "Duration",
+        "description": "Duration of the challenge in days."
+      },
+      "completion_goal": {
+        "type": "string",
+        "title": "Completion Goal",
+        "description": "Criteria to complete the challenge."
+      },
+      "bonus_reward": {
+        "type": "string",
+        "title": "Bonus Reward",
+        "description": "Reward given upon successful completion."
+      },
+      "category": {
+        "type": "string",
+        "title": "Category",
+        "description": "Category of the challenge (e.g., Fitness, Training, Social).",
+        "index": true
+      },
+      "start_date": {
+        "type": "string",
+        "format": "date-time",
+        "title": "Start Date",
+        "description": "Start date and time of the challenge."
+      },
+      "end_date": {
+        "type": "string",
+        "format": "date-time",
+        "title": "End Date",
+        "description": "End date and time of the challenge."
+      },
+      "is_active": {
+        "type": "integer",
+        "title": "Is Active",
+        "description": "Boolean flag (1 for true, 0 for false) indicating if the challenge is currently active.",
+        "default": 1
+      },
+      "created_at": {
+        "type": "string",
+        "format": "date-time",
+        "title": "Created At",
+        "description": "Timestamp of challenge creation.",
+        "readOnly": true
+      },
+      "updated_at": {
+        "type": "string",
+        "format": "date-time",
+        "title": "Updated At",
+        "description": "Timestamp of last update.",
+        "readOnly": true
+      }
+    }
+  }
+  
+  

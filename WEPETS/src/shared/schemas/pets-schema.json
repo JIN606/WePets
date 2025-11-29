@@ -1,0 +1,74 @@
+
+
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "$id": "urn:table:pets",
+    "type": "object",
+    "title": "Pets",
+    "description": "Stores pet information linked to users, including progress and rewards.",
+    "required": ["name", "owner_user_id"],
+    "properties": {
+      "id": {
+        "type": "integer",
+        "title": "ID",
+        "description": "The unique, auto-incrementing identifier for the pet.",
+        "readOnly": true,
+        "primaryKey": true
+      },
+      "name": {
+        "type": "string",
+        "title": "Pet Name",
+        "description": "The name of the pet."
+      },
+      "avatar_url": {
+        "type": "string",
+        "title": "Avatar URL",
+        "description": "URL to the pet's avatar image."
+      },
+      "breed": {
+        "type": "string",
+        "title": "Breed",
+        "description": "The breed of the pet."
+      },
+      "level": {
+        "type": "integer",
+        "title": "Level",
+        "description": "The current level of the pet based on XP.",
+        "default": 1
+      },
+      "total_xp": {
+        "type": "integer",
+        "title": "Total XP",
+        "description": "Total experience points earned by the pet.",
+        "default": 0
+      },
+      "coins": {
+        "type": "integer",
+        "title": "Coins",
+        "description": "In-game currency earned by the pet.",
+        "default": 0
+      },
+      "owner_user_id": {
+        "type": "integer",
+        "title": "Owner User ID",
+        "description": "Reference to the user who owns this pet.",
+        "index": true
+      },
+      "created_at": {
+        "type": "string",
+        "format": "date-time",
+        "title": "Created At",
+        "description": "Timestamp of pet record creation.",
+        "readOnly": true
+      },
+      "updated_at": {
+        "type": "string",
+        "format": "date-time",
+        "title": "Updated At",
+        "description": "Timestamp of last update.",
+        "readOnly": true
+      }
+    }
+  }
+  
+  

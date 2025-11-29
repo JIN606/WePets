@@ -1,0 +1,51 @@
+
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "$id": "urn:table:leaderboard_scores",
+    "type": "object",
+    "title": "Leaderboard Scores",
+    "description": "Stores total scores of users' pets for leaderboard display with last update timestamp.",
+    "required": ["user_id", "total_score", "last_updated"],
+    "properties": {
+      "id": {
+        "type": "integer",
+        "title": "ID",
+        "description": "Unique auto-incrementing identifier for the leaderboard score record.",
+        "readOnly": true,
+        "primaryKey": true
+      },
+      "user_id": {
+        "type": "integer",
+        "title": "User ID",
+        "description": "Reference to the user.",
+        "index": true
+      },
+      "total_score": {
+        "type": "number",
+        "title": "Total Score",
+        "description": "Sum of all pets' total XP for the user.",
+        "default": 0
+      },
+      "last_updated": {
+        "type": "string",
+        "format": "date-time",
+        "title": "Last Updated",
+        "description": "Timestamp of the last score update."
+      },
+      "created_at": {
+        "type": "string",
+        "format": "date-time",
+        "title": "Created At",
+        "description": "Timestamp of record creation.",
+        "readOnly": true
+      },
+      "updated_at": {
+        "type": "string",
+        "format": "date-time",
+        "title": "Updated At",
+        "description": "Timestamp of last update.",
+        "readOnly": true
+      }
+    }
+  }
+  

@@ -1,0 +1,53 @@
+
+
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "$id": "urn:table:users",
+    "type": "object",
+    "title": "Users",
+    "description": "Stores user account information for the WePets application.",
+    "required": ["email"],
+    "properties": {
+      "id": {
+        "type": "integer",
+        "title": "ID",
+        "description": "The unique, auto-incrementing identifier for the user.",
+        "readOnly": true,
+        "primaryKey": true
+      },
+      "name": {
+        "type": "string",
+        "title": "Full Name",
+        "description": "The user's full display name."
+      },
+      "email": {
+        "type": "string",
+        "format": "email",
+        "title": "Email Address",
+        "description": "The user's email address, used for login and notifications.",
+        "unique": true,
+        "index": true
+      },
+      "picture": {
+        "type": "string",
+        "title": "Avatar URL",
+        "description": "The user's profile picture URL."
+      },
+      "created_at": {
+        "type": "string",
+        "format": "date-time",
+        "title": "Created At",
+        "description": "Timestamp of account creation.",
+        "readOnly": true
+      },
+      "updated_at": {
+        "type": "string",
+        "format": "date-time",
+        "title": "Updated At",
+        "description": "Timestamp of the last update.",
+        "readOnly": true
+      }
+    }
+  }
+  
+  
