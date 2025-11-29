@@ -45,13 +45,13 @@ WePets is an innovative mobile application that blends real-world pet care with 
 ```bash
 git clone https://github.com/JIN606/WePets.git
 cd WePets/WEPETS
-
+```
 2. **Install dependencies**
 ```bash
 npm install
 # or
 yarn install
-
+```
 ## 🏃 Running the App
 
 ### Development Mode
@@ -61,3 +61,4 @@ yarn install
 npm start
 # or
 yarn start
+```
