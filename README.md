@@ -22,17 +22,11 @@ WePets is an innovative mobile application that blends real-world pet care with 
 - 💬 **Community Chat** - Connect with other pet owners and share experiences
 
 ## 🛠️ Tech Stack
-
+ 
 - **Frontend**: React Native, Expo
 - **State Management**: Redux Toolkit / Context API
 - **Navigation**: React Navigation
 - **UI Framework**: React Native Paper / Custom Components
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB / Firebase
-- **Authentication**: Firebase Auth / JWT
-- **Cloud Storage**: Firebase Storage
-- **Push Notifications**: Expo Notifications
-- **Build Tool**: Metro Bundler
 - **Package Manager**: npm / yarn
 
 ## 🚀 Getting Started
@@ -51,3 +45,19 @@ WePets is an innovative mobile application that blends real-world pet care with 
 ```bash
 git clone https://github.com/JIN606/WePets.git
 cd WePets/WEPETS
+
+2. **Install dependencies**
+```bash
+npm install
+# or
+yarn install
+
+## 🏃 Running the App
+
+### Development Mode
+
+```bash
+# Start the development server
+npm start
+# or
+yarn start
